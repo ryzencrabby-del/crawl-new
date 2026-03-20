@@ -238,6 +238,7 @@ export default function DiscoverScreen() {
       <KeyboardAvoidingView
         style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        // @ts-expect-error `keyboardShouldPersistTaps` is typed for ScrollView, not KeyboardAvoidingView.
         keyboardShouldPersistTaps="handled"
       >
         <ScrollView

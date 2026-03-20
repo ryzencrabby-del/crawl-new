@@ -56,7 +56,7 @@ const MAP_PINS = [
   { top: '65%', left: '70%' },
   { top: '25%', left: '75%' },
   { top: '70%', left: '40%' },
-]
+] as const
 
 export default function ProfileScreen() {
   const [stats, setStats] = useState({ outings: 12, spots: 67, friends: 8 })

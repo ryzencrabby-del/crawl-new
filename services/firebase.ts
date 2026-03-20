@@ -13,8 +13,13 @@ import {
   getDoc,
   Timestamp
 } from 'firebase/firestore'
-import { getAuth, signInAnonymously } from 'firebase/auth'
+import { initializeAuth, signInAnonymously } from '@firebase/auth'
+// `getReactNativePersistence` is available for React Native builds.
+// Your current TypeScript resolution may use a different @firebase/auth entrypoint.
+// @ts-ignore
+import { getReactNativePersistence } from '@firebase/auth'
 import Constants from 'expo-constants'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const extra = Constants.expoConfig?.extra || {}
 
@@ -29,7 +34,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 export const db = getFirestore(app)
-export const auth = getAuth(app)
+export const auth = initializeAuth(app as any, {
+  persistence: getReactNativePersistence(AsyncStorage),
+})
 
 export async function signInAnon() {
   try { return await signInAnonymously(auth) } catch { return null }
