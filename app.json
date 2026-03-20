@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Crawl",
+    "slug": "crawl",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#E8572A"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.crawl.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Crawl uses your location to find nearby spots."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#E8572A"
+      },
+      "package": "com.crawl.app",
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-location"
+    ],
+    "scheme": "crawl",
+    "extra": {
+      "GOOGLE_PLACES_KEY": "REPLACE_WITH_YOUR_GOOGLE_PLACES_KEY",
+      "YELP_API_KEY": "REPLACE_WITH_YOUR_YELP_API_KEY",
+      "NYC_OPEN_DATA_TOKEN": "REPLACE_WITH_YOUR_NYC_OPEN_DATA_TOKEN",
+      "FOURSQUARE_KEY": "REPLACE_WITH_YOUR_FOURSQUARE_KEY",
+      "CLAUDE_API_KEY": "REPLACE_WITH_YOUR_CLAUDE_API_KEY",
+      "FIREBASE_API_KEY": "REPLACE_WITH_YOUR_FIREBASE_API_KEY",
+      "OPENWEATHER_KEY": "REPLACE_WITH_YOUR_OPENWEATHER_KEY"
+    }
+  }
+}
